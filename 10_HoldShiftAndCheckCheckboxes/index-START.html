@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hold Shift to Check Multiple Checkboxes</title>
+</head>
+
+
+
+
+<body>
+
+  <style>
+    :root {
+      --main-bg-color: #bada55;
+      --main-inbox-color: rgb(55, 129, 126);
+      --inbox-boxShadow-color: rgba(7, 205, 255, .4);
+      --input-bg-color: rgb(189, 255, 134);
+      --input-color: rgb(55, 129, 126);
+      --input-border-color: #4c9a1b;
+
+    }
+
+    html {
+      font-family: sans-serif;
+      background-color: var(--main-bg-color);
+    }
+
+    .inbox {
+      max-width: 400px;
+      margin: 50px auto;
+      background: var(--main-inbox-color);
+      border-radius: 5px;
+      box-shadow: 10px 10px 0 var(--inbox-boxShadow-color);
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--input-border-color);
+    }
+
+    .item:last-child {
+      border-bottom: 0;
+    }
+
+    input:checked+p {
+      background: var(--input-bg-color);
+      text-decoration: line-through;
+      color: var(--input-color);
+    }
+
+    input[type="checkbox"] {
+      margin: 20px;
+    }
+
+    p {
+      margin: 0;
+      padding: 20px;
+      transition: background 0.2s;
+      flex: 1;
+      font-family: 'helvetica neue';
+      font-size: 20px;
+      font-weight: 200;
+      border-left: 1px solid var(--input-border-color);
+    }
+  </style>
+  <!--
+   The following is a common layout you would see in an email client.
+
+   When a user clicks a checkbox, holds Shift, and then clicks another checkbox a few rows down, all the checkboxes inbetween those two checkboxes should be checked.
+
+  -->
+  <div class="inbox">
+    <div class="item">
+      <input type="checkbox">
+      <p>This is an inbox layout.</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Check one item</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Hold down your Shift key</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Check a lower item</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Everything in between should also be set to checked</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Try to do it without any libraries</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Just regular JavaScript</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Good Luck!</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Don't forget to tweet your result!</p>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
